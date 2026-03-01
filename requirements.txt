@@ -3,4 +3,14 @@ pandas
 scikit-learn
 seaborn
 matplotlib
-
+tensorflow
+keras
+xgboost
+lightgbm
+catboost
+statsmodels
+ipykernel
+jupyterlab
+notebook
+dataclasses
+requests
