@@ -135,8 +135,11 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+.artifacts
 .artifacts/
 .env
+artifacts/
+artifacts 
 .envrc
 .venv
 vnev
@@ -207,3 +210,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+#modeltrainer.py
+
+catboost_info/
+.catboost_info/
