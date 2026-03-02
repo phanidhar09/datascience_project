@@ -4,10 +4,14 @@ import pandas as pd
 
 from src.exception import CustomException
 from src.logger import logging
+from src.utils import save_object
+#from src.components.data_transformation import DataTransformationConfig, DataTransformation
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from dataclasses import dataclass
+
+
 
 @dataclass
 class DataIngestionConfig:
