@@ -14,3 +14,6 @@ jupyterlab
 notebook
 dataclasses
 requests
+flask
+gunicorn
+psutil

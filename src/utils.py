@@ -43,3 +43,15 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
     except Exception as e:
         logging.error("Error occurred during model evaluation.")
         raise CustomException(e, sys)
+
+def load_object(file_path):
+    try:
+        logging.info("Loading object from file: %s", file_path)
+        # Here you can add code to load the object from a file, e.g., using pickle or joblib.
+        with open(file_path, 'rb') as file:
+            obj = pickle.load(file)
+        logging.info("Object loaded successfully.")
+        return obj
+    except Exception as e:
+        logging.error("Error occurred while loading object from file.")
+        raise CustomException(e, sys)
