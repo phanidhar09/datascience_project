@@ -49,7 +49,49 @@ class ModelTrainer:
                 "CatBoost Classifier": CatBoostRegressor()
             }
 
-            model_report :dict = evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models)
+            params={
+                "Random Forest": {
+                    'n_estimators': [100, 200],
+                    'max_depth': [None, 10, 20],
+                    'min_samples_split': [2, 5],
+                    'min_samples_leaf': [1, 2]
+                },
+                "Gradient Boosting": {
+                    'n_estimators': [100, 200],
+                    'learning_rate': [0.01, 0.1],
+                    'max_depth': [3, 5]
+                },
+                "Ada Boost": {
+                    'n_estimators': [50, 100],
+                    'learning_rate': [0.01, 0.1]
+                },
+                "XGBoost": {
+                    'n_estimators': [100, 200],
+                    'learning_rate': [0.01, 0.1],
+                    'max_depth': [3, 5]
+                },
+                "Decision Tree": {
+                    'max_depth': [None, 10, 20],
+                    'min_samples_split': [2, 5],
+                    'min_samples_leaf': [1, 2]
+                },
+                "KNN": {
+                    'n_neighbors': [3, 5, 7],
+                    'weights': ['uniform', 'distance']
+                },
+                "SVR": {
+                    'kernel': ['linear', 'rbf'],
+                    'C': [1, 10]
+                },
+                "CatBoost Classifier": {
+                    'iterations': [100, 200],
+                    'learning_rate': [0.01, 0.1],
+                    'depth': [3, 5]
+                }
+
+            }
+
+            model_report :dict = evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models,params=params)
             
 
             best_model_score = max(model_report.values())
